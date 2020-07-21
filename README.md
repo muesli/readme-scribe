@@ -55,3 +55,7 @@ This action will be triggered once per hour, parses `templates/README.md.tpl`
 and generates a new `README.md` for you, and eventually pushes the changes to
 the `master` branch. Make sure to adjust the input values `template` and
 `writeTo` to suit your needs.
+
+## Example output
+
+![readme-scribe example output](https://github.com/muesli/readme-scribe/raw/master/assets/template_example.png)
