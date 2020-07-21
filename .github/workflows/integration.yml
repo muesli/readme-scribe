@@ -1,0 +1,17 @@
+name: Integration Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: muesli/readme-scribe@master
+        with:
+          template: "test/README.md.tpl"
+          writeTo: "test/README.md"
+
+      - name: Check outputs and modified files
+        run: |
+          cat test/README.md
