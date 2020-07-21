@@ -24,3 +24,7 @@ runs:
     - "-write"
     - ${{ inputs.writeTo }}
     - ${{ inputs.template }}
+
+branding:
+  icon: "file-text"
+  color: "green"
