@@ -1,0 +1,26 @@
+# action.yml
+name: "Generate & update markdown content"
+description: "Automatically generate & update markdown content like a README.md"
+author: "Christian Muehlhaeuser"
+
+inputs:
+  template:
+    description: "Which template to use"
+    default: "README.md.tpl"
+    required: false
+  writeTo:
+    description: "Where to render the template to"
+    default: "README.md"
+    required: false
+
+outputs:
+  modified:
+    description: "Which files were modified"
+
+runs:
+  using: "docker"
+  image: "fribbledom/markscribe"
+  args:
+    - "-write"
+    - ${{ inputs.writeTo }}
+    - ${{ inputs.template }}
