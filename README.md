@@ -48,11 +48,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           commit_message: Update generated README
-          branch: master
+          branch: main
           commit_user_name: readme-scribe 🤖
           commit_user_email: actions@github.com
           commit_author: readme-scribe 🤖 <actions@github.com>
 ```
+
+Careful: if you use `master` instead of `main` as the default branch, you will
+need to update the above config for `git-auto-commit-action` accordingly.
 
 This action will be triggered once per hour, parses `templates/README.md.tpl`
 and generates a new `README.md` for you, and eventually pushes the changes to
